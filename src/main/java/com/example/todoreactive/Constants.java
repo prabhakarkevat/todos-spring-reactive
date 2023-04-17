@@ -6,6 +6,7 @@ public final class Constants {
     public static final String COMPLETED = "Completed";
 
     public static final String RETRIEVING = "Retrieving";
+    public static final String CREATING = "Creating";
 
     public static final String TODOS = "todos";
     public static final String SPACE_DELIMITER = " ";
