@@ -39,7 +39,6 @@ public class TodoController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public Mono<TodoEntity> saveTodos(@RequestBody TodoEntity todoEntity) {
-        log.info(todoEntity);
         log.info(Constants.STARTED
                 + Constants.SPACE_DELIMITER
                 + Constants.CREATING
