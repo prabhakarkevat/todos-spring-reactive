@@ -27,7 +27,7 @@ public class CorsConfigurer {
         http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests((authz) -> authz
-                        .requestMatchers("/todos")
+                        .requestMatchers("/todos/**")
                         .permitAll()
                 )
                 .httpBasic(withDefaults());

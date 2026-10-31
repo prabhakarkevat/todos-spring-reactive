@@ -22,8 +22,26 @@ public class TodoService {
         return todoRepository.findAll().map(mapper::entityToDto);
     }
 
+    public Mono<TodoDTO> getTodo(Long id) {
+        return todoRepository.findById(id).map(mapper::entityToDto);
+    }
+
     public Mono<TodoDTO> saveTodo(TodoDTO todo) {
         TodoEntity todoEntity = mapper.dtoToEntity(todo);
         return todoRepository.save(todoEntity).map(mapper::entityToDto);
+    }
+
+    public Mono<TodoDTO> updateTodo(Long id, TodoDTO todo) {
+        return todoRepository.findById(id)
+                .flatMap(existing -> {
+                    existing.setTitle(todo.title());
+                    existing.setCompleted(todo.completed());
+                    return todoRepository.save(existing);
+                })
+                .map(mapper::entityToDto);
+    }
+
+    public Mono<Void> deleteTodo(Long id) {
+        return todoRepository.deleteById(id);
     }
 }
