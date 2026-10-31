@@ -1,4 +1,4 @@
-package com.example.todoreactive;
+package com.prabhakar_kevat.todoreactive;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

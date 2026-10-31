@@ -1,4 +1,4 @@
-package com.example.todoreactive;
+package com.prabhakar_kevat.todoreactive;
 
 public final class Constants {
 
